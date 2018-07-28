@@ -28,27 +28,26 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
 });
 
-client.login(process.env.BOT_TOKEN);
-client.on('message', message =>{
-    let args = message.content.split(' ');
-    let prefix = '!!'; //تقدر تغير البرفكس
+client.on('message', message => {
+
+     if (message.author.bot) return;
+    if (!message.channel.guild) return;
+    if (message.content.startsWith(prefix + 'mb')) {
+        if (!message.channel.guild) return;
+        let embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setThumbnail(message.author.avatarURL)
+            .setFooter(message.author.username, message.author.avatarURL)
+
+        .setDescription(`**:battery: حالة اعضاء السيرفر**
     
-    if(args[0] === `${prefix}avatar`){
-        let mentions = message.mentions.members.first()
-        if(!mentions) {
-          let sicon = message.author.avatarURL
-          let embed = new Discord.RichEmbed()
-          .setImage(message.author.avatarURL)
-          .setColor("#f7abab") 
-          .setDescription(`**${message.author.username}#${message.author.discriminator}**'s avatar :`);
-          message.channel.send({embed})
-        } else {
-          let sicon = mentions.user.avatarURL
-          let embed = new Discord.RichEmbed()
-          .setColor("#f7abab")
-          .setDescription(`**${mentions.user.username}#${mentions.user.discriminator}**'s avatar :`)
-          .setImage(sicon)
-          message.channel.send({embed})
-        }
-    };
+**:green_heart: Online**  **[ ${message.guild.members.filter(m=>m.presence.status == 'online').size} ]**
+**:yellow_heart: Idle**       **[ ${message.guild.members.filter(m=>m.presence.status == 'idle').size} ]**  
+**:heart: DND**     **[ ${message.guild.members.filter(m=>m.presence.status == 'dnd').size} ]**
+**:black_heart: Offline** **[ ${message.guild.members.filter(m=>m.presence.status == 'offline').size} ]** `)
+
+        message.channel.send()
+
+        message.channel.sendEmbed(embed)
+    }
 });
