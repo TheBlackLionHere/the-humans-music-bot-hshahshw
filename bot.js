@@ -85,5 +85,5 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
   }
 });
 
-client.login(process.env.BOT_TOKEN):
+
 
