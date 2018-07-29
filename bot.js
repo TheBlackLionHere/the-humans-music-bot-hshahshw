@@ -281,22 +281,7 @@ message.react("❌")
    message.channel.send({embed});
       }
   });
-const child_process = require("child_process");
-const adminprefix = "$";
-const devs = ['396958215377780747'];
-
 client.on('message', message => {
-if(message.content === adminprefix + "restart") {
-      if (!devs.includes(message.author.id)) return;
-          message.channel.send(⚠️ **الشخص الذي اعاد تشغيل البوت ${message.author.username}**);
-        console.log(⚠️ جاري اعادة تشغيل البوت... ⚠️);
-        client.destroy();
-        child_process.fork(__dirname + "/الملف.js");
-        console.log(تم اعادة تشغيل البوت);
-    }
-  
-  });
-lient.on('message', message => {
      var prefix ="$"; // هنا تقدر تغيير برفكس البوت
  if(message.content.startsWith(prefix +"server")){
 if(!message.channel.guild) return message.reply(' ');
@@ -320,4 +305,5 @@ message.channel.sendEmbed(embed)
 
 }
 });
+
 client.login(process.env.BOT_TOKEN)
