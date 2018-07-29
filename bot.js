@@ -37,7 +37,6 @@ client.on('message', message => {
   .addField("**Server: **" , client.guilds.size)
   message.channel.sendEmbed(embed);
     }
-
 client.on('message', msg => {
   if (msg.content === 'ping') {
     msg.reply('Pong!');
