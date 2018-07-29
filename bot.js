@@ -281,4 +281,4 @@ message.react("❌")
    message.channel.send({embed});
       }
   });
-client.login("NDcyODY2OTU3NTk5OTY1MTg1.Dj5xuw.a4pb3qyY9toYJ9ItI_peJdJRFkE");
+client.login("");
