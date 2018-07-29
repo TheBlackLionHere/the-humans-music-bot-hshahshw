@@ -15,7 +15,7 @@ client.on('message', message => {
     }
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
+  if (msg.content === '$ping') {
     msg.reply('Pong!');
   }
 });
@@ -159,17 +159,7 @@ client.on("guildMemberRemove", member => {
   description: ' Bye ..',
 }}).catch(console.error);
   }
-);
-client.on("message", (message) => {
-    if (message.content.startsWith("*ban ")) {
-      if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('⚠ ماعندك الصلاحيات');
-        var member= message.mentions.members.first();
-        member.ban().then((member) => {
-            message.channel.send(member.displayName + " لقد تم طرده بنجاح :wave: ");
-        }).catch(() => {
-            message.channel.send(":x: هناك خطاء حاول مره أخرى:x: ");
-        });
-    }
+
 
 
 
