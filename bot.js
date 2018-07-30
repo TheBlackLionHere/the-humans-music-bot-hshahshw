@@ -300,4 +300,4 @@ client.on('message', function(msg) {
       msg.channel.send({embed:embed});
     }
 });
-client.login("");
+client.login(process.env.BOT_TOKEN)
