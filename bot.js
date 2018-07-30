@@ -281,5 +281,5 @@ message.react("❌")
    message.channel.send({embed});
       }
   });
-c
+
 client.login(process.env.BOT_TOKEN)
