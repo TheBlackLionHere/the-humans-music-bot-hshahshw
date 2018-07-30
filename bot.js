@@ -282,5 +282,16 @@ message.react("❌")
    message.channel.send({embed});
       }
   });
-
+client.on("guildMemberAdd", function(member) {
+    const wc = member.guild.channels.find("name", "member-log")
+        const embed = new Discord.RichEmbed()
+        .setColor('B90C0C')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+ .setDescription('***يا مرحبا وسهلاً بضيف لفانا، يزهي بك الأدب العربي وينثر لك أزهار يسقيك من نبع المشاعر وفانا، لين الهلا تثمر على غصونك أطيار. ***')
+.setThumbnail(member.avatarURL)
+  .setImage('https://www.askideas.com/media/13/Welcome-Deers-Sign.jpg')
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+        
+});
 client.login(process.env.BOT_TOKEN)
