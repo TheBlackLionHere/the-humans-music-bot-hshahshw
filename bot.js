@@ -283,7 +283,6 @@ message.react("❌")
       }
   });
 client.on('message', function(msg) {
-  const prefix = "$";
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
