@@ -299,5 +299,4 @@ message.react("❌")
       msg.channel.send({embed:embed});
     }
 });
-client.login("");
-
+client.login(process.env.BOT_TOKEN)
