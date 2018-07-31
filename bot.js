@@ -305,7 +305,7 @@ client.on("message", message => {
   let command = message.content.split(" ")[0];
  
   if (command === "$mute") {
-        if (!message.member.hasPermission('MOD')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
+        if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
   let user = message.mentions.users.first();
   let modlog = client.channels.find('name', 'mute-log');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
@@ -319,7 +319,7 @@ client.on("message", message => {
     .addField('تم ميوت:', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('بواسطة:', `${message.author.username}#${message.author.discriminator}`)
    
-   if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
+   if (!message.guild.member(client.user).hasPermission('Mod')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
  
   if (message.guild.member(user).roles.has(muteRole.id)) {
      return message.reply("** تم اعطاء العضو المحدد ميوت  **").catch(console.error);
@@ -338,7 +338,7 @@ client.on("message", message => {
   let command = message.content.split(" ")[0];
  
   if (command === "$unmute") {
-        if (!message.member.hasPermission('MOD')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
+        if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
   let user = message.mentions.users.first();
   let modlog = client.channels.find('name', 'mute-log');
   let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
@@ -351,7 +351,7 @@ client.on("message", message => {
     .addField('تم فك الميوت عن:', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('بواسطة:', `${message.author.username}#${message.author.discriminator}`)
  
-  if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
+  if (!message.guild.member(client.user).hasPermission('Mod')) return message.reply('** لا يوجد لدي برمشن Manage Roles **').catch(console.error);
  
   if (message.guild.member(user).removeRole(muteRole.id)) {
       return message.reply("** تم فك الميوت عن الشخص المحدد  .. **").catch(console.error);
