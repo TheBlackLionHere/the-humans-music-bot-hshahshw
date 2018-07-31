@@ -21,7 +21,7 @@ client.on('message', msg => {
 });
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "help-en") {
+     if (message.content === prefix + "help-eb") {
 		 message.channel.send('**The Message Was Sent On Private**');
             
 	
