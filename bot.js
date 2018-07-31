@@ -20,8 +20,8 @@ client.on('message', msg => {
   }
 });
 client.on('message', message => {
-if(message.content.startsWith(prefix + 'help-en'))
     if (message.author.bot) return;
+	if(message.content.startsWith(prefix + 'help-en'))
      if (message.content === prefix + "help-en") {
 		 message.channel.send('**The Message Was Sent On Private**');
             
