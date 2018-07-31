@@ -124,11 +124,7 @@ client.on('message', msg => {
     msg.reply('link');
   }
 });
-client.on('message', msg => {
-  if (msg.content === '$help') {
-    msg.reply(':envelope: | تم ارسال الرساله في الخاص');
-  }
-});
+
 client.on("message", message => {
     var prefix = "$";
  
