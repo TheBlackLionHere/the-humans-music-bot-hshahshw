@@ -41,7 +41,7 @@ client.on('message', message => {
 });
 client.on('message', msg => {
   if (msg.content === '$invite') {
-    msg.reply('https://discordapp.com/api/oauth2/authorize?client_id=472866957599965185&permissions=0&scope=bot');
+    msg.reply('link');
   }
 });
 client.on('message', msg => {
