@@ -14,6 +14,71 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help-en") {
+		 message.channel.send('**The Message Was Sent On Private**');
+            
+	
+		 
+
+
+ message.author.sendMessage(`
+ **
+__~~TheHumans-Bot~~__ Got By: TheBlackLion_
+╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱╭╮
+╭╯╰┫┃╱╱╱╱┃┃┃╭╯╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
+╰╮╭┫╰━┳━━┫╰╯╯╭┳━╮╭━━┫╰╯╰┳━┻╮╭╯
+╱┃┃┃╭╮┃┃━┫╭╮┃┣┫╭╮┫╭╮┃╭━╮┃╭╮┃┃
+╱┃╰┫┃┃┃┃━┫┃┃╰┫┃┃┃┃╰╯┃╰━╯┃╰╯┃╰╮
+╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+╔[❖════════════❖]╗
+             Prefix = ' $ '
+╚[❖════════════❖]╝
+╔[❖════════════❖]╗
+             Staff Commands
+╚[❖════════════❖]╝
+ ❖ $kick <mention > ➾ kick member from server
+ ❖ $clear ➾ clear chat 
+ 
+ ❖ $mute < mention > < mute time >  ➾ mute member
+ ❖ $unmute <mention> ➾ unmute member
+ ❖ $move <mention>  ➾ move member
+ ❖ $ban  <mention > band member from server
+  
+ ❖ $bc <message> ➾ message all members in server
+ ❖ $mutechannel  ➾ for lock the channel/ تقفيل الشات
+ 
+ ❖ $unmutechannel  ➾ unlock Channel/ الغاء تقفيل الشات
+ 
+ ❖ note :   طبعا الاوامر هاي مش  لكل الستاف في فرق بين  رتبة ورتبة ورح تفهم كل شي  لما تترقى وكمان ملاحظة الاكواد دي قابلة للتغير في اي وقت
+╔[❖════════════❖]╗
+            General & Funny Commands
+╚[❖════════════❖]╝
+❖ $image ➾ server avatar
+❖ $id ➾ your id
+❖ *avatar ➾ your avatar account
+❖ $ping ➾ to see ping
+❖ $زواج ➾  just for fun
+❖ $server ➾ server informations 
+❖ $invite ➾ bot invite link
+❖ $say  ➾  اكتب شي والبوت يقوله
+❖ note :    طبعا الاكواد  هاي للكل وممكن ينضاف عليها اي شي و بأي وقت وبس السلام عليكم
+╔[❖════════════❖]╗
+                    Welcome
+╚[❖════════════❖]╝
+`);
+
+    }
+});
+});
 client.on('message', message => {
   if(message.content === ('clear')) {
   let modRole = message.guild.roles.find("name", "Admin");
