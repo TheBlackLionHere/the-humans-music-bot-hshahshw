@@ -439,7 +439,6 @@ const adkar = [
   message.react("??")
   }
   });
-const Discord1 = require("discord.js")
 const client = new Discord.Client()
 client.on("ready", () => {
 let channel =     client.channels.get("ايدي الشانل هنا")
