@@ -12,6 +12,7 @@ client.on('message', message => {
   .setColor("#0000FF")
   .addField("**Server: **" , client.guilds.size)
   message.channel.sendEmbed(embed);
+     }
     });
 client.on('message', msg => {
   if (msg.content === 'ping') {
@@ -29,7 +30,7 @@ client.on('message', message => {
     message.channel.fetchMessages({limit: messagecount})
         .then(messages => message.channel.bulkDelete(messages));
   }
-});
+}); 
 client.on('message', message => {
     var args = message.content.split(/[ ]+/)
     if(message.content.includes('discord.gg')){
