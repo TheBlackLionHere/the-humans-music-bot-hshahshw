@@ -19,66 +19,7 @@ client.on('message', msg => {
     msg.reply('Pong!');
   }
 });
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content === prefix + "help-en") {
-		 message.channel.send('**The Message Was Sent On Private**');
-            
-	
-		 
 
-
- message.author.sendMessage(`
- **
-__~~TheHumans-Bot~~__ Got By: TheBlackLion_
-╱╭╮╭╮╱╱╱╱╭╮╭━╮╱╱╱╱╱╱╭━━╮╱╱╱╭╮
-╭╯╰┫┃╱╱╱╱┃┃┃╭╯╱╱╱╱╱╱┃╭╮┃╱╱╭╯╰╮
-╰╮╭┫╰━┳━━┫╰╯╯╭┳━╮╭━━┫╰╯╰┳━┻╮╭╯
-╱┃┃┃╭╮┃┃━┫╭╮┃┣┫╭╮┫╭╮┃╭━╮┃╭╮┃┃
-╱┃╰┫┃┃┃┃━┫┃┃╰┫┃┃┃┃╰╯┃╰━╯┃╰╯┃╰╮
-╱╰━┻╯╰┻━━┻╯╰━┻┻╯╰┻━╮┣━━━┻━━┻━╯
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
-╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
-╔[❖════════════❖]╗
-             Prefix = ' $ '
-╚[❖════════════❖]╝
-╔[❖════════════❖]╗
-             Staff Commands
-╚[❖════════════❖]╝
- ❖ $kick <mention > ➾ kick member from server
- ❖ $clear ➾ clear chat 
- 
- ❖ $mute < mention > < mute time >  ➾ mute member
- ❖ $unmute <mention> ➾ unmute member
- ❖ $move <mention>  ➾ move member
- ❖ $ban  <mention > band member from server
-  
- ❖ $bc <message> ➾ message all members in server
- ❖ $mutechannel  ➾ for lock the channel/ تقفيل الشات
- 
- ❖ $unmutechannel  ➾ unlock Channel/ الغاء تقفيل الشات
- 
- ❖ note :   طبعا الاوامر هاي مش  لكل الستاف في فرق بين  رتبة ورتبة ورح تفهم كل شي  لما تترقى وكمان ملاحظة الاكواد دي قابلة للتغير في اي وقت
-╔[❖════════════❖]╗
-            General & Funny Commands
-╚[❖════════════❖]╝
-❖ $image ➾ server avatar
-❖ $id ➾ your id
-❖ *avatar ➾ your avatar account
-❖ $ping ➾ to see ping
-❖ $زواج ➾  just for fun
-❖ $server ➾ server informations 
-❖ $invite ➾ bot invite link
-❖ $say  ➾  اكتب شي والبوت يقوله
-❖ note :    طبعا الاكواد  هاي للكل وممكن ينضاف عليها اي شي و بأي وقت وبس السلام عليكم
-╔[❖════════════❖]╗
-                    Welcome
-╚[❖════════════❖]╝
-`);
-
-    }
-});
-});
 client.on('message', message => {
   if(message.content === ('clear')) {
   let modRole = message.guild.roles.find("name", "Admin");
@@ -422,5 +363,40 @@ client.on("message", message => {
           console.log('[report] Send By: ' + message.author.username)
       }
       });
+client.on('message' , message => {
+  var prefix = "$";
+  if(message.author.bot) return;
+  if(message.content.startsWith(prefix + "send")) {
+    let args = message.content.split(" ").slice(1);
 
+
+    let suggestmessage = args.join(" ").slice(22);
+    let suggestchannel = message.mentions.channels.first();
+
+    if (!suggestchannel) {
+        return message.reply("Please Mention the channel!")
+    }
+
+    if (!suggestmessage) {
+        return message.reply("Plase Give Text To send Channel!")
+    
+         
+    }
+     message.delete();
+suggestchannel.send("@everyone  `||` @here ");
+    let embed = new Discord.RichEmbed()
+        .addField("**message**", `${suggestmessage}`)
+        .setFooter(`by ${message.author.tag}`)
+        .setTimestamp()
+    suggestchannel.send({
+        embed
+    }).then(msg => {
+        msg.react("✅").then(r => msg.react("❎"))
+    });
+
+
+    message.reply(`Your message is sended.`).then(msg => msg.delete(1000));
+    return;
+}
+});
 client.login(process.env.BOT_TOKEN)
