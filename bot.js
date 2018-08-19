@@ -12,7 +12,7 @@ client.on('message', message => {
   .setColor("#0000FF")
   .addField("**Server: **" , client.guilds.size)
   message.channel.sendEmbed(embed);
-    }
+    : });
 client.on('message', msg => {
   if (msg.content === 'ping') {
     msg.reply('Pong!');
