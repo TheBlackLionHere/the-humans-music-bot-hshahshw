@@ -373,7 +373,7 @@ client.on("message", message => {
       }
       });
 client.on('guildMemberAdd', member => {
-     const welcomer =  member.guild.channels.find('name', 'اسم روم الترحيب');
+     const welcomer =  member.guild.channels.find('name', 'welcome');
 const w = ['./w1.png'];
  
          let Image = Canvas.Image,
