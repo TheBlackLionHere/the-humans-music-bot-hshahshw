@@ -402,4 +402,15 @@ var title = args[1]
                    });
           }
 });
+client.on ("guildMemberAdd", member => {
+  
+   var role = member.guild.roles.find ("name", "member");
+   member.addRole (role);
+  
+})
+
+client.on ("guildMemberRemove", member => {
+   
+})
+
 client.login(process.env.BOT_TOKEN)
