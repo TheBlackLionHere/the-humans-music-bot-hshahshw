@@ -422,7 +422,6 @@ const adkar = [
   var client= new Discord.RichEmbed()
   .setTitle("**اذكار**")
   .setThumbnail(message.author.avatarURL)
-	.setFooter(`Alpha Code - الفا كود`, 'https://images-ext-1.discordapp.net/external/avtiq0mBJyT9xc7UNHzmoeomi_-eTXFDAROI95UjCag/https/cdn.discordapp.com/icons/431397251445817345/7c0b22a3329fabade4d304ebc10d2ad4.jpg')
   .setColor('RANDOM')
   .setDescription(`${adkar[Math.floor(Math.random() * adkar.length)]}`)
 				 .setTimestamp()
