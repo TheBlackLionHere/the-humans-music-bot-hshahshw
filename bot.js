@@ -432,7 +432,7 @@ const adkar = [
 client.on("ready", () => {
 let channel =     client.channels.get("473524633799491584")
 setInterval(function() {
-channel.send(`$اذكار`);
+channel.send('$اذكار');
 }, 7200000)
 })
 
