@@ -1070,7 +1070,7 @@ client.on("guildMemberAdd", function(member) {
         .setAuthor(member.user.tag, member.user.avatarURL)
  .setDescription('***يا مرحبا وسهلاً بضيف لفانا، يزهي بك الأدب العربي وينثر لك أزهار يسقيك من نبع المشاعر وفانا، لين الهلا تثمر على غصونك أطيار. ***')
 .setThumbnail(member.avatarURL)
-  .setImage('https://s3.amazonaws.com/playbackmediatest/previews/2016/09/22032315/Firework_Celebration_Welcome_Still_prod.jpg')
+  .setImage('https://www.askideas.com/media/13/Welcome-Deers-Sign.jpg')
         .setTimestamp()
         return wc.sendEmbed(embed);
         
