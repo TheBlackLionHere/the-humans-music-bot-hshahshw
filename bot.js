@@ -1064,7 +1064,7 @@ client.on('message', message => {
         }
     });
 client.on("guildMemberAdd", function(member) {
-    const wc = member.guild.channels.find("name", "member-log")
+    const wc = member.guild.channels.find("name", "💬chat-for-all💬")
         const embed = new Discord.RichEmbed()
         .setColor('B90C0C')
         .setAuthor(member.user.tag, member.user.avatarURL)
