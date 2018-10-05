@@ -1063,4 +1063,16 @@ client.on('message', message => {
             return;
         }
     });
+client.on("guildMemberAdd", function(member) {
+    const wc = member.guild.channels.find("name", "member-log")
+        const embed = new Discord.RichEmbed()
+        .setColor('B90C0C')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+ .setDescription('***يا مرحبا وسهلاً بضيف لفانا، يزهي بك الأدب العربي وينثر لك أزهار يسقيك من نبع المشاعر وفانا، لين الهلا تثمر على غصونك أطيار. ***')
+.setThumbnail(member.avatarURL)
+  .setImage('https://s3.amazonaws.com/playbackmediatest/previews/2016/09/22032315/Firework_Celebration_Welcome_Still_prod.jpg')
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+        
+});
 client.login(process.env.BOT_TOKEN)
